@@ -17,9 +17,6 @@ A **React Native** mobile application for a multi-seller bookstore with a **Node
 - [Seller Side (Seller Panel)](#🏪-seller-side-seller-panel)
 - [Backend Features](#🔧-backend-features)
 - [Getting Started](#🚀-getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Backend Setup](#1️⃣-backend-setup)
-  - [Frontend Setup](#2️⃣-frontend-setup)
 - [Features](#🧩-features)
 - [Author](#🌟-author)
 
@@ -144,27 +141,22 @@ orders(
   book_id INT,
   status ENUM('Pending','Shipped')
 );
+```
 
+---
 
-Live Backend: [Your Backend URL Here]
+## 🚀 Getting Started
 
+### Prerequisites
 
-🚀 Getting Started
-Prerequisites
+- Node.js & npm installed
+- SQL database (MySQL/PostgreSQL/SQLite)
+- React Native environment setup
+- Mobile device or emulator
 
-Node.js & npm installed
+### 1️⃣ Backend Setup
 
-SQL database (MySQL/PostgreSQL/SQLite)
-
-React Native environment setup
-
-Mobile device or emulator
-
-
-1️⃣ Backend Setup
-
-
-
+```bash
 # Clone the repository
 git clone <repo-url>
 cd backend
@@ -180,7 +172,6 @@ DB_USER=<your_user>
 DB_PASS=<your_password>
 DB_NAME=<your_database>
 
-
 DATABASE_URL=<your_database_url>
 
 # Run migrations / seed (if any)
@@ -188,21 +179,18 @@ npx prisma migrate dev --name init
 
 # Start server
 npm run dev
+```
 
-
-Backend should now be live at:
-
-http://localhost:5000
-
-
-### I have Deployed The Backend so you can skip this part
+Backend should now be live at: http://localhost:5000
 
 ### ⚠️ Note
 
 I have **deployed the backend**, so you can **skip the backend setup steps** if you want.
-You can use the following dummy accounts to test the app:
+
+**Test Accounts:**
 
 - **Seller:**
+
   - Email: `seller@gmail.com`
   - Password: `1234`
 
@@ -210,11 +198,9 @@ You can use the following dummy accounts to test the app:
   - Email: `buyer@gmail.com`
   - Password: `1234`
 
+### 2️⃣ Frontend Setup
 
-
-2️⃣ Frontend Setup
-
-
+```bash
 # Navigate to frontend
 cd frontend
 
@@ -229,28 +215,25 @@ npm run android
 
 # Run on iOS (Mac required)
 npx react-native run-ios
-
+```
 
 Make sure your backend is running and endpoints are updated in the frontend API service.
 
+---
 
-🧩 Features
+## 🧩 Features
 
-Buyer Side: Browse, view, add to cart, checkout.
+- **Buyer Side:** Browse, view, add to cart, checkout.
+- **Seller Side:** Add books, view sales, manage orders.
+- **Authentication & Role Separation:** Users can be buyers or sellers.
+- **Responsive UI:** Works on Android and iOS devices.
+- **Persistent Database:** SQL backend for structured storage.
 
-Seller Side: Add books, view sales, manage orders.
+---
 
-Authentication & Role Separation: Users can be buyers or sellers.
+## 🌟 Author
 
-Responsive UI: Works on Android and iOS devices.
+**Ruvishu Shukla**
 
-Persistent Database: SQL backend for structured storage.
-
-🌟 Author
-
-Ruvishu Shukla
-
-Email: <ruvishushukla1@gmail.com>
-
-GitHub: https://github.com/rv-work
-```
+- Email: ruvishushukla1@gmail.com
+- GitHub: https://github.com/rv-work
