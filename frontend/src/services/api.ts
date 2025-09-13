@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
 export const api: AxiosInstance = axios.create({
-  baseURL: 'http://192.168.1.41:5000',
+  baseURL: 'https://book-app-aldw.onrender.com',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
