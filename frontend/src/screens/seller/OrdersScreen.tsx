@@ -515,6 +515,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 60,
     paddingHorizontal: 20,
+    marginBottom: 30,
   },
   emptyIcon: {
     fontSize: 48,

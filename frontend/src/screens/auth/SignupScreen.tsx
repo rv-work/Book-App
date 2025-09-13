@@ -55,7 +55,6 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
       <StatusBar barStyle="light-content" backgroundColor="#6366F1" />
       <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
-          {/* Header Section */}
           <View style={styles.headerSection}>
             <View style={styles.headerContent}>
               <Text style={styles.brandTitle}>BookStore</Text>
@@ -64,10 +63,8 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
             </View>
           </View>
 
-          {/* Form Section */}
           <View style={styles.formSection}>
             <View style={styles.formContainer}>
-              {/* Progress Indicator */}
               <View style={styles.progressContainer}>
                 <View style={styles.progressBar}>
                   <View style={[styles.progressFill, { width: width * 0.6 }]} />
@@ -75,7 +72,6 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
                 <Text style={styles.progressText}>Step 1 of 2</Text>
               </View>
 
-              {/* Name Input */}
               <View style={styles.inputContainer}>
                 <Text style={styles.inputLabel}>Full Name</Text>
                 <TextInput
@@ -95,7 +91,6 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
                 />
               </View>
 
-              {/* Email Input */}
               <View style={styles.inputContainer}>
                 <Text style={styles.inputLabel}>Email Address</Text>
                 <TextInput
@@ -116,7 +111,6 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
                 />
               </View>
 
-              {/* Password Input */}
               <View style={styles.inputContainer}>
                 <Text style={styles.inputLabel}>Password</Text>
                 <TextInput
@@ -139,7 +133,6 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
                 </Text>
               </View>
 
-              {/* Role Selection */}
               <View style={styles.roleContainer}>
                 <Text style={styles.roleTitle}>Choose your account type:</Text>
                 <Text style={styles.roleSubtitle}>What do you want to do on BookStore?</Text>
@@ -203,7 +196,6 @@ const SignupScreen: React.FC<Props> = ({ navigation }) => {
                 </View>
               </View>
 
-              {/* Benefits Section */}
               <View style={styles.benefitsContainer}>
                 <Text style={styles.benefitsTitle}>
                   {role === 'buyer' ? 'Buyer Benefits:' : 'Seller Benefits:'}

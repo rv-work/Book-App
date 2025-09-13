@@ -1,10 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {
-  BookOpen,
-  PlusCircle,
-  Receipt,
-} from 'lucide-react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import MyBooksScreen from '../screens/seller/MyBooksScreen';
 import AddBookScreen from '../screens/seller/AddBookScreen';
@@ -18,18 +14,26 @@ export type SellerTabParamList = {
 
 const Tab = createBottomTabNavigator<SellerTabParamList>();
 
-const iconSize = 28;
+const getIconName = (routeName: keyof SellerTabParamList) => {
+  switch (routeName) {
+    case 'MyBooks':
+      return 'library-outline';
+    case 'AddBook':
+      return 'add-circle';
+    case 'Orders':
+      return 'receipt-outline';
+    default:
+      return 'ellipse';
+  }
+};
 
-const MyBooksIcon = ({ color }: { color: string }) => (
-  <BookOpen size={iconSize} color={color} />
-);
+const renderTabBarIcon =
+  (routeName: keyof SellerTabParamList) =>
+    ({ color, size }: { color: string; size: number }) =>
+      <Ionicons name={getIconName(routeName)} size={size} color={color} />;
 
 const AddBookIcon = () => (
-  <PlusCircle size={50} color="#28a745" />
-);
-
-const OrdersIcon = ({ color }: { color: string }) => (
-  <Receipt size={iconSize} color={color} />
+  <Ionicons name="add-circle" size={50} color="#28a745" />
 );
 
 const SellerNavigator: React.FC = () => {
@@ -59,7 +63,7 @@ const SellerNavigator: React.FC = () => {
       <Tab.Screen
         name="MyBooks"
         component={MyBooksScreen}
-        options={{ tabBarIcon: MyBooksIcon }}
+        options={{ tabBarIcon: renderTabBarIcon('MyBooks') }}
       />
       <Tab.Screen
         name="AddBook"
@@ -69,7 +73,7 @@ const SellerNavigator: React.FC = () => {
       <Tab.Screen
         name="Orders"
         component={OrdersScreen}
-        options={{ tabBarIcon: OrdersIcon }}
+        options={{ tabBarIcon: renderTabBarIcon('Orders') }}
       />
     </Tab.Navigator>
   );

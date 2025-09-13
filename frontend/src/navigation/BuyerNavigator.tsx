@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Store, ShoppingBag, Receipt } from 'lucide-react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeScreen from '../screens/buyer/HomeScreen';
 import CartScreen from '../screens/buyer/CartScreen';
 import MyOrdersScreen from '../screens/buyer/MyOrdersScreen';
@@ -13,18 +13,28 @@ export type BuyerTabParamList = {
 
 const Tab = createBottomTabNavigator<BuyerTabParamList>();
 
-const iconSize = 28;
-
-const HomeTabBarIcon = ({ color }: { color: string }) => (
-  <Store size={iconSize} color={color} />
+const HomeTabBarIcon = ({ focused, color, size }: { focused: boolean; color: string; size: number }) => (
+  <Ionicons
+    name={focused ? 'storefront' : 'storefront-outline'}
+    size={size + 2}
+    color={color}
+  />
 );
 
-const CartTabBarIcon = ({ color }: { color: string }) => (
-  <ShoppingBag size={iconSize} color={color} />
+const CartTabBarIcon = ({ focused, color, size }: { focused: boolean; color: string; size: number }) => (
+  <Ionicons
+    name={focused ? 'bag-handle' : 'bag-handle-outline'}
+    size={size + 2}
+    color={color}
+  />
 );
 
-const MyOrdersTabBarIcon = ({ color }: { color: string }) => (
-  <Receipt size={iconSize} color={color} />
+const MyOrdersTabBarIcon = ({ focused, color, size }: { focused: boolean; color: string; size: number }) => (
+  <Ionicons
+    name={focused ? 'receipt' : 'receipt-outline'}
+    size={size + 2}
+    color={color}
+  />
 );
 
 const BuyerNavigator: React.FC = () => {

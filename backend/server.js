@@ -9,7 +9,7 @@ import sellerRouter from "./Routes/sellerRoutes.js";
 const app = express();
 
 app.use(cors({
-  origin: "*",      
+  origin: "*", 
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
