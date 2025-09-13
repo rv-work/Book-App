@@ -1,0 +1,58 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id             Int     @id @default(autoincrement())
+  name           String
+  email          String  @unique
+  password       String
+  role           Role
+  books          Book[]
+  cart           Cart[]
+  ordersAsBuyer  Order[] @relation("OrderBuyer")
+  ordersAsSeller Order[] @relation("OrderSeller")
+}
+
+enum Role {
+  buyer
+  seller
+}
+
+model Book {
+  id          Int     @id @default(autoincrement())
+  seller      User    @relation(fields: [sellerId], references: [id])
+  sellerId    Int
+  title       String
+  description String
+  price       Float
+  stock       Int
+  imageUrl    String
+  orders      Order[]
+  Cart        Cart[]
+}
+
+model Cart {
+  id       Int  @id @default(autoincrement())
+  buyer    User @relation(fields: [buyerId], references: [id])
+  buyerId  Int
+  book     Book @relation(fields: [bookId], references: [id])
+  bookId   Int
+  quantity Int
+}
+
+model Order {
+  id       Int    @id @default(autoincrement())
+  buyer    User   @relation("OrderBuyer", fields: [buyerId], references: [id])
+  buyerId  Int
+  seller   User   @relation("OrderSeller", fields: [sellerId], references: [id])
+  sellerId Int
+  book     Book   @relation(fields: [bookId], references: [id])
+  bookId   Int
+  status   String
+}
