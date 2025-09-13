@@ -112,7 +112,6 @@ export const sellerApi = {
   getOrders: (): Promise<AxiosResponse<Order[]>> =>
     api.get('/api/seller/orders'),
 
-  
   updateOrderStatus: (
     orderId: string,
     status: Order['status'],
