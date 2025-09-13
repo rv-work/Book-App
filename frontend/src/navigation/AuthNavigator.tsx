@@ -12,16 +12,14 @@ const Stack = createStackNavigator<AuthStackParamList>();
 
 const AuthNavigator: React.FC = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name="Login"
         component={LoginScreen}
-        options={{ title: 'Login to Bookstore' }}
       />
       <Stack.Screen
         name="Signup"
         component={SignupScreen}
-        options={{ title: 'Create Account' }}
       />
     </Stack.Navigator>
   );

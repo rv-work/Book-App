@@ -52,6 +52,7 @@ export const signup = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
+    console.log("aaya")
     const { email, password } = req.body;
 
     const user = await prisma.user.findUnique({ where: { email } });

@@ -47,7 +47,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setToken(storedToken);
 
         const response = await axios.get(
-          'http://192.168.1.41:5000/api/user/check',
+          'https://book-app-aldw.onrender.com/api/user/check',
           {
             headers: {
               Authorization: `Bearer ${storedToken}`,
