@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
   },
+
   title: {
     fontSize: 16,
     fontWeight: 'bold',
